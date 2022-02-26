@@ -5,7 +5,14 @@
   "main": "index.js",
   "author": "CleytonRR",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "commit": "git-cz"
+  },
   "dependencies": {
     "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
