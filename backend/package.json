@@ -1,0 +1,8 @@
+{
+  "name": "mycontacts-backend",
+  "version": "1.0.0",
+  "description": "Backend for mycontacts application",
+  "main": "index.js",
+  "author": "CleytonRR",
+  "license": "MIT"
+}
