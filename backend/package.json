@@ -6,8 +6,7 @@
   "author": "CleytonRR",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "commit": "git-cz"
+    "dev": "nodemon src/index.js"
   },
   "dependencies": {
     "express": "^4.17.3"
