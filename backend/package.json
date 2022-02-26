@@ -4,5 +4,8 @@
   "description": "Backend for mycontacts application",
   "main": "index.js",
   "author": "CleytonRR",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
