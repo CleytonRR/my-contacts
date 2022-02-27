@@ -1,9 +1,9 @@
-const express = require('express')
+const express = require('express');
 
-const app = express()
+const app = express();
 
 app.get('/', (request, response) => {
-  response.send('Hello World')
-})
+  response.send('Hello World');
+});
 
-app.listen(3000, () => console.log('Server running at 3000'))
+app.listen(3000, () => console.log('Server running at 3000'));
