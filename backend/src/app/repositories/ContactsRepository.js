@@ -1,19 +1,31 @@
-const { uuid } = require('uuidv4');
+const { v4 } = require('uuid');
 
 const contacts = [
   {
-    id: uuid(),
+    id: v4(),
     name: 'Mateus',
     email: 'mateus@mail.com',
     phone: '20003939290',
-    category_id: uuid(),
+    category_id: v4(),
+  },
+  {
+    id: v4(),
+    name: 'José',
+    email: 'José@mail.com',
+    phone: '20003939290',
+    category_id: v4(),
   },
 ];
 
 class ContactsRepository {
   findAll() {
-    // eslint-disable-next-line no-promise-executor-return
     return new Promise((resolve) => resolve(contacts));
+  }
+
+  findById(id) {
+    return new Promise((resolve) => resolve(
+      contacts.find((contact) => contact.id === id),
+    ));
   }
 }
 
