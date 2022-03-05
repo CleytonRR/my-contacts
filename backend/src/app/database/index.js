@@ -11,8 +11,8 @@ const client = new Client({
 
 client.connect();
 
-// exports.query = async (query) => {
-//   const { rows } = await client.query(query);
+exports.query = async (query) => {
+  const { rows } = await client.query(query);
 
-//   return rows;
-// };
+  return rows;
+};
