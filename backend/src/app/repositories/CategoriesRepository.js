@@ -15,6 +15,22 @@ class CategoriesController {
 
     return row;
   }
+
+  async findByName(name) {
+    const [row] = await db.query(`
+    SELECT * from categories
+    WHERE name = $1
+    `, [name]);
+
+    return row;
+  }
+
+  async delete(id) {
+    await db.query(`
+      DELETE FROM categories
+      WHERE id = $1
+    `, [id]);
+  }
 }
 
 module.exports = new CategoriesController();
