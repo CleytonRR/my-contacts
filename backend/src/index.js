@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 require('express-async-errors');
 
@@ -13,4 +14,4 @@ app.use((error, request, response, next) => {
   response.sendStatus(500);
 });
 
-app.listen(3000, () => console.log('Server running at 3000'));
+app.listen(process.env.SERVER_PORT, () => console.log(`Server running at ${process.env.SERVER_PORT}`));
