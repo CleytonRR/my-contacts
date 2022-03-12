@@ -6,10 +6,14 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Sora', sans-serif;
-    font-size: 16px;
   }
 
   body {
-    background: #F6F5FC;
+    background: ${({ theme }) => theme.backgroundColor};
+    font-size: 16px;
+  }
+
+  button {
+    cursor: pointer;
   }
 `;
