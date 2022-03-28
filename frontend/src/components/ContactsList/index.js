@@ -1,6 +1,8 @@
 import arrow from '../../assets/images/icons/arrow.svg';
 
-import { Container, Header, ListContainer } from './styles';
+import {
+  Container, Header, ListContainer, Card,
+} from './styles';
 
 export default function ContactsList() {
   return (
@@ -17,6 +19,10 @@ export default function ContactsList() {
             <img src={arrow} alt="Arrow icon" />
           </button>
         </header>
+
+        <Card>
+          oakslakjs
+        </Card>
       </ListContainer>
     </Container>
   );
