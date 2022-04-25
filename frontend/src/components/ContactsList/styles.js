@@ -58,4 +58,8 @@ export const Card = styled.div`
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.04);
   padding: 16px;
   border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
