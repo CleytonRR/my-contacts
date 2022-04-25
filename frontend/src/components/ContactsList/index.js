@@ -41,6 +41,46 @@ export default function ContactsList() {
             </button>
           </div>
         </Card>
+
+        <Card>
+          <div className="info">
+            <div className="contact-name">
+              <strong>Mateus Silva</strong>
+              <small>Instagram</small>
+            </div>
+            <span>mateus@devacademy.com.br</span>
+            <span>(41) 99999-999</span>
+          </div>
+
+          <div className="actions">
+            <a href="/">
+              <img src={edit} alt="Edit" />
+            </a>
+            <button type="button">
+              <img src={trash} alt="Delete icon" />
+            </button>
+          </div>
+        </Card>
+
+        <Card>
+          <div className="info">
+            <div className="contact-name">
+              <strong>Mateus Silva</strong>
+              <small>Instagram</small>
+            </div>
+            <span>mateus@devacademy.com.br</span>
+            <span>(41) 99999-999</span>
+          </div>
+
+          <div className="actions">
+            <a href="/">
+              <img src={edit} alt="Edit" />
+            </a>
+            <button type="button">
+              <img src={trash} alt="Delete icon" />
+            </button>
+          </div>
+        </Card>
       </ListContainer>
     </Container>
   );
