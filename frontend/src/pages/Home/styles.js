@@ -5,7 +5,6 @@ export const Container = styled.div`
 `;
 
 export const InputSearchContainer = styled.div`
-  margin-top: 48px;
   width: 100%;
 
   input {
