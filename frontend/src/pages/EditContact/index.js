@@ -2,6 +2,6 @@ import PageHeader from '../../components/PageHeader';
 
 export default function EditContact() {
   return (
-    <PageHeader />
+    <PageHeader title="Editar Mateus Silva" />
   );
 }
