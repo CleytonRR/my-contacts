@@ -5,7 +5,7 @@ export default function NewContact() {
   return (
     <>
       <PageHeader title="Novo contato" />
-      <ContactForm />
+      <ContactForm buttonLabel="Cadastrar" />
     </>
   );
 }
