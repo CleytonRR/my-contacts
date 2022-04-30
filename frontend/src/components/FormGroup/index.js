@@ -1,10 +1,16 @@
+import PropTypes from 'prop-types';
+
 import { Container } from './styles';
 
-export default function FormGroup() {
+export default function FormGroup({ children }) {
   return (
     <Container>
-      FKk
+      {children}
     </Container>
 
   );
 }
+
+FormGroup.propTypes = {
+  children: PropTypes.node.isRequired,
+};
