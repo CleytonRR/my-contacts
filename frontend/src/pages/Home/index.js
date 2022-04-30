@@ -13,7 +13,7 @@ import {
 export default function Home() {
   return (
     <Container>
-      <Modal />
+      <Modal danger />
       <InputSearchContainer>
         <input type="text" placeholder="pesquise pelo nome" />
       </InputSearchContainer>
