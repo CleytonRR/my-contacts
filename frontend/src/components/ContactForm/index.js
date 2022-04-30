@@ -1,8 +1,9 @@
-import { Form } from './styles';
+import { Form, ButtonContainer } from './styles';
 
 import FormGroup from '../FormGroup';
 import Input from '../Input';
 import Select from '../Select';
+import Button from '../Button';
 
 export default function ContactForm() {
   return (
@@ -24,6 +25,12 @@ export default function ContactForm() {
           <option value="instagram">Instagram</option>
         </Select>
       </FormGroup>
+
+      <ButtonContainer>
+        <Button type="submit">
+          Salvar alterações
+        </Button>
+      </ButtonContainer>
     </Form>
   );
 }
