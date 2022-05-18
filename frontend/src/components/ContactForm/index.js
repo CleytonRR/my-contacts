@@ -18,9 +18,14 @@ export default function ContactForm({ buttonLabel }) {
   const [phone, setPhone] = useState('');
   const [category, setCategory] = useState('');
 
-  const { setError, removeError, getErrorMessageByFieldName } = useErrors();
+  const {
+    errors,
+    setError,
+    removeError,
+    getErrorMessageByFieldName,
+  } = useErrors();
 
-  const isFormValid = true;
+  const isFormValid = (name && errors.length === 0);
 
   function handleSubmit(event) {
     event.preventDefault();
