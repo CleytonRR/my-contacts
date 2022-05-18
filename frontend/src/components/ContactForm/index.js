@@ -20,6 +20,8 @@ export default function ContactForm({ buttonLabel }) {
 
   const { setError, removeError, getErrorMessageByFieldName } = useErrors();
 
+  const isFormValid = true;
+
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -90,7 +92,7 @@ export default function ContactForm({ buttonLabel }) {
       </FormGroup>
 
       <ButtonContainer>
-        <Button type="submit">
+        <Button type="submit" disabled={!isFormValid}>
           {buttonLabel}
         </Button>
       </ButtonContainer>
