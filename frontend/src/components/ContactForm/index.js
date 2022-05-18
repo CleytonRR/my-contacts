@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import formatPhone from '../../utils/formatPhone';
+import formatPhone from '../../utils/formatCpf';
 import isEmailValid from '../../utils/isEmailValid';
 import useErrors from '../../hooks/useErrors';
 
@@ -83,7 +83,7 @@ export default function ContactForm({ buttonLabel }) {
           placeholder="Telefone"
           value={phone}
           onChange={handlePhoneChange}
-          maxLength="15"
+          maxLength="14"
         />
       </FormGroup>
 
