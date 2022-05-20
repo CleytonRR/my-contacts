@@ -2,16 +2,14 @@ require('dotenv').config();
 const express = require('express');
 require('express-async-errors');
 
+const cors = require('./app/middlewares/cors');
 const routes = require('./routes');
 
 const app = express();
 
 app.use(express.json());
 
-app.use((request, response, next) => {
-  response.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-  next();
-});
+app.use(cors);
 
 app.use(routes);
 
