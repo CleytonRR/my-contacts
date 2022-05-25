@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { Link } from 'react-router-dom';
 
 import arrow from '../../assets/images/icons/arrow.svg';
@@ -9,6 +11,17 @@ import {
 } from './styles';
 
 export default function Home() {
+  useEffect(() => {
+    fetch('http://localhost:3001/contacts').then(async (response) => {
+      const json = await response.json();
+      json.forEach((contact) => {
+        console.log(contact);
+      });
+    }).catch((e) => {
+      console.log('error', e);
+    });
+  }, []);
+
   return (
     <Container>
       <InputSearchContainer>
