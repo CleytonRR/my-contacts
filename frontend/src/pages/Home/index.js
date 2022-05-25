@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -11,12 +11,12 @@ import {
 } from './styles';
 
 export default function Home() {
+  const [contacts, setContacts] = useState([]);
+
   useEffect(() => {
     fetch('http://localhost:3001/contacts').then(async (response) => {
       const json = await response.json();
-      json.forEach((contact) => {
-        console.log(contact);
-      });
+      setContacts(json);
     }).catch((e) => {
       console.log('error', e);
     });
