@@ -28,7 +28,11 @@ export default function Home() {
         <input type="text" placeholder="pesquise pelo nome" />
       </InputSearchContainer>
       <Header>
-        <strong>3 contatos</strong>
+        <strong>
+          {contacts.length}
+          {' '}
+          {contacts.length === 1 ? 'contatos' : 'contato'}
+        </strong>
         <Link to="/new">Novo contato</Link>
       </Header>
 
