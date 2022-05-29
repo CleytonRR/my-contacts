@@ -12,15 +12,20 @@ import {
 
 export default function Home() {
   const [contacts, setContacts] = useState([]);
+  const [orderBy, setOrderBy] = useState('asc');
 
   useEffect(() => {
-    fetch('http://localhost:3001/contacts').then(async (response) => {
+    fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`).then(async (response) => {
       const json = await response.json();
       setContacts(json);
     }).catch((e) => {
       console.log('error', e);
     });
-  }, []);
+  }, [orderBy]);
+
+  function handleToggleOrdeyBy() {
+    setOrderBy((prevState) => (prevState === 'asc' ? 'desc' : 'asc'));
+  }
 
   return (
     <Container>
@@ -37,7 +42,7 @@ export default function Home() {
       </Header>
 
       <ListHeader>
-        <button type="button">
+        <button type="button" onClick={handleToggleOrdeyBy}>
           <span>Nome</span>
           <img src={arrow} alt="Arrow icon" />
         </button>
