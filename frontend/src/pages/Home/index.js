@@ -13,6 +13,11 @@ import {
 export default function Home() {
   const [contacts, setContacts] = useState([]);
   const [orderBy, setOrderBy] = useState('asc');
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredContacts = contacts.filter((contact) => (
+    contact.name.toLowerCase().includes(searchTerm.toLowerCase())
+  ));
 
   useEffect(() => {
     fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`).then(async (response) => {
@@ -27,16 +32,20 @@ export default function Home() {
     setOrderBy((prevState) => (prevState === 'asc' ? 'desc' : 'asc'));
   }
 
+  function handleChangeSearchTerm(event) {
+    setSearchTerm(event.target.value);
+  }
+
   return (
     <Container>
       <InputSearchContainer>
-        <input type="text" placeholder="pesquise pelo nome" />
+        <input type="text" onChange={handleChangeSearchTerm} placeholder="pesquise pelo nome" />
       </InputSearchContainer>
       <Header>
         <strong>
-          {contacts.length}
+          {filteredContacts.length}
           {' '}
-          {contacts.length === 1 ? 'contatos' : 'contato'}
+          {filteredContacts.length === 1 ? 'contatos' : 'contato'}
         </strong>
         <Link to="/new">Novo contato</Link>
       </Header>
@@ -48,7 +57,7 @@ export default function Home() {
         </button>
       </ListHeader>
 
-      {contacts.map((contact) => (
+      {filteredContacts.map((contact) => (
         <Card key={contact.id}>
           <div className="info">
             <div className="contact-name">
