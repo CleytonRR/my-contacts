@@ -6,6 +6,8 @@ import arrow from '../../assets/images/icons/arrow.svg';
 import edit from '../../assets/images/icons/edit.svg';
 import trash from '../../assets/images/icons/trash.svg';
 
+import Loader from '../../components/Loader';
+
 import {
   Container, Header, ListHeader, Card, InputSearchContainer,
 } from './styles';
@@ -38,6 +40,7 @@ export default function Home() {
 
   return (
     <Container>
+      <Loader />
       <InputSearchContainer>
         <input type="text" onChange={handleChangeSearchTerm} placeholder="pesquise pelo nome" />
       </InputSearchContainer>
