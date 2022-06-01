@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <Container>
-      <Loader />
+      {isLoading && <Loader />}
       <InputSearchContainer>
         <input type="text" onChange={handleChangeSearchTerm} placeholder="pesquise pelo nome" />
       </InputSearchContainer>
