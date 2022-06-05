@@ -1,7 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 
 import { Link } from 'react-router-dom';
-import delay from '../../utils/delay';
 
 import arrow from '../../assets/images/icons/arrow.svg';
 import edit from '../../assets/images/icons/edit.svg';
@@ -27,7 +26,6 @@ export default function Home() {
     setIsLoading(true);
 
     fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`).then(async (response) => {
-      await delay(2000);
       const json = await response.json();
       setContacts(json);
     }).catch((e) => {
