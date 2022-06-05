@@ -24,14 +24,17 @@ export default function Home() {
 
   useEffect(() => {
     async function loadContacts() {
-      setIsLoading(true);
+      try {
+        setIsLoading(true);
+        const response = await fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`);
+        const json = await response.json();
 
-      const response = await fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`);
-
-      const json = await response.json();
-
-      setContacts(json);
-      setIsLoading(false);
+        setContacts(json);
+      } catch (error) {
+        console.log('error', error);
+      } finally {
+        setIsLoading(false);
+      }
     }
 
     loadContacts();
