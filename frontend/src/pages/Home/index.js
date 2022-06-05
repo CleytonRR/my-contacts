@@ -26,14 +26,12 @@ export default function Home() {
     async function loadContacts() {
       setIsLoading(true);
 
-      fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`).then(async (response) => {
-        const json = await response.json();
-        setContacts(json);
-      }).catch((e) => {
-        console.log('error', e);
-      }).finally(() => {
-        setIsLoading(false);
-      });
+      const response = await fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`);
+
+      const json = await response.json();
+
+      setContacts(json);
+      setIsLoading(false);
     }
 
     loadContacts();
