@@ -25,6 +25,7 @@
     "import/prefer-default-export": "off",
     "react/jsx-no-bind": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "class-methods-use-this": "off"
   }
 }
