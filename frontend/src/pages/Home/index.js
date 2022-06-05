@@ -30,9 +30,10 @@ export default function Home() {
       await delay(2000);
       const json = await response.json();
       setContacts(json);
-      setIsLoading(false);
     }).catch((e) => {
       console.log('error', e);
+    }).finally(() => {
+      setIsLoading(false);
     });
   }, [orderBy]);
 
