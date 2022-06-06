@@ -1,6 +1,6 @@
 class HttpClient {
-  async get(url) {
-    const response = await fetch(url);
+  async get(path) {
+    const response = await fetch(`http://localhost:3000${path}`);
 
     return response.json();
   }
