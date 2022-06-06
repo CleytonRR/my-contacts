@@ -4,10 +4,10 @@ class HttpClient {
   }
 
   async get(path) {
-    const response = await fetch(`${this.baseURL}/${path}`);
+    const response = await fetch(`${this.baseURL}${path}`);
 
     return response.json();
   }
 }
 
-export default new HttpClient();
+export default HttpClient;
