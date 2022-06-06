@@ -1,6 +1,10 @@
 class HttpClient {
+  constructor(baseURL) {
+    this.baseURL = baseURL;
+  }
+
   async get(path) {
-    const response = await fetch(`http://localhost:3000${path}`);
+    const response = await fetch(`${this.baseURL}/${path}`);
 
     return response.json();
   }
