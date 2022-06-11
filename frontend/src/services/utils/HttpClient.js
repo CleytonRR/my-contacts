@@ -18,7 +18,11 @@ class HttpClient {
       return body;
     }
 
-    throw new Error(body.error);
+    const errorMessage = body
+      ? body.error
+      : `${response.status} - ${response.statusText}`;
+
+    throw new Error(errorMessage);
   }
 }
 
