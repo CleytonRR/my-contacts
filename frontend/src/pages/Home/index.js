@@ -1,4 +1,6 @@
-import { useEffect, useState, useMemo } from 'react';
+import {
+  useEffect, useState, useMemo, useCallback,
+} from 'react';
 
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
@@ -26,24 +28,27 @@ export default function Home() {
     contact.name.toLowerCase().includes(searchTerm.toLowerCase())
   )), [searchTerm, contacts]);
 
-  async function loadContacts() {
-    try {
-      setIsLoading(true);
+  const loadContacts = useCallback(
+    async () => {
+      try {
+        setIsLoading(true);
 
-      const contactsList = await ContactsService.listContacts(orderBy);
+        const contactsList = await ContactsService.listContacts(orderBy);
 
-      setHasError(false);
-      setContacts(contactsList);
-    } catch {
-      setHasError(true);
-    } finally {
-      setIsLoading(false);
-    }
-  }
+        setHasError(false);
+        setContacts(contactsList);
+      } catch {
+        setHasError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [orderBy],
+  );
 
   useEffect(() => {
     loadContacts();
-  }, [orderBy]);
+  }, [loadContacts]);
 
   function handleToggleOrdeyBy() {
     setOrderBy((prevState) => (prevState === 'asc' ? 'desc' : 'asc'));
