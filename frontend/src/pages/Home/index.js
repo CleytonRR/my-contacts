@@ -11,11 +11,18 @@ import arrow from '../../assets/images/icons/arrow.svg';
 import edit from '../../assets/images/icons/edit.svg';
 import trash from '../../assets/images/icons/trash.svg';
 import sad from '../../assets/images/sad.svg';
+import emptyBox from '../../assets/images/empty-box.svg';
 
 import Loader from '../../components/Loader';
 
 import {
-  Container, Header, ListHeader, Card, InputSearchContainer, ErrorContainer,
+  Container,
+  Header,
+  ListHeader,
+  Card,
+  InputSearchContainer,
+  ErrorContainer,
+  EmptyListContainer,
 } from './styles';
 
 export default function Home() {
@@ -83,17 +90,17 @@ export default function Home() {
             )
 }
       >
-        {!hasError && (
-        <strong>
-          {filteredContacts.length}
-          {' '}
-          {filteredContacts.length === 1 ? 'contatos' : 'contato'}
-        </strong>
+        {!hasError && contacts.length > 0 && (
+          <strong>
+            {filteredContacts.length}
+            {' '}
+            {filteredContacts.length === 1 ? 'contatos' : 'contato'}
+          </strong>
         )}
         <Link to="/new">Novo contato</Link>
       </Header>
 
-      {(hasError && contacts.length > 0) && (
+      {(hasError) && (
         <ErrorContainer>
           <img src={sad} alt="sad" />
           <div className="details">
@@ -105,6 +112,21 @@ export default function Home() {
 
       {!hasError && (
       <>
+        {contacts.length < 1 && !isLoading && (
+          <EmptyListContainer>
+            <img src={emptyBox} alt="Empty box" />
+
+            <p>
+              Você ainda não tem nenhum contato cadastrado!
+              Clique no botão
+              {' '}
+              <strong>”Novo contato”</strong>
+              {' '}
+              à cima para cadastrar o seu primeiro!
+
+            </p>
+          </EmptyListContainer>
+        )}
         {filteredContacts.length > 0 && (
         <ListHeader orderBy={orderBy}>
           <button type="button" onClick={handleToggleOrdeyBy}>
