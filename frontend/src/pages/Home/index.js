@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import {
   useEffect, useState, useMemo, useCallback,
 } from 'react';
@@ -65,10 +66,23 @@ export default function Home() {
   return (
     <Container>
       <Loader isLoading={isLoading} />
+      {contacts.length > 0 && (
       <InputSearchContainer>
         <input type="text" onChange={handleChangeSearchTerm} placeholder="pesquise pelo nome" />
       </InputSearchContainer>
-      <Header hasError={hasError}>
+
+      )}
+      <Header
+        justifyContent={
+          hasError
+            ? 'flex-end'
+            : (
+              contacts.length > 0
+                ? 'space-between'
+                : 'center'
+            )
+}
+      >
         {!hasError && (
         <strong>
           {filteredContacts.length}
@@ -79,7 +93,7 @@ export default function Home() {
         <Link to="/new">Novo contato</Link>
       </Header>
 
-      {hasError && (
+      {(hasError && contacts.length > 0) && (
         <ErrorContainer>
           <img src={sad} alt="sad" />
           <div className="details">
