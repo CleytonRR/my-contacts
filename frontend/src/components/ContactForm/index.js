@@ -104,7 +104,7 @@ export default function ContactForm({ buttonLabel }) {
         />
       </FormGroup>
 
-      <FormGroup>
+      <FormGroup isLoading={isLoadingCategories}>
         <Select
           value={categoryId}
           onChange={(event) => setCategoryId(event.target.value)}
