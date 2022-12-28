@@ -19,7 +19,8 @@ export default styled.select`
   }
 
   &[disabled] {
-    background-color: 2px solid ${({ theme }) => theme.colors.gray[100]};
-    border-color: 2px solid ${({ theme }) => theme.colors.gray[200]};
+    background-color: ${({ theme }) => theme.colors.gray[100]};
+    border-color: ${({ theme }) => theme.colors.gray[200]};
+    opacity: 1;
   }
 `;

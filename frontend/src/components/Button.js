@@ -10,6 +10,9 @@ export default styled.button`
     font-weight: bold;
     color: #fff;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: background 0.2s ease-in;
 
     &:hover {
