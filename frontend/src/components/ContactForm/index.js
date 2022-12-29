@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import Spinner from '../Spinner';
 import CategoriesService from '../../services/CategoriesService';
 import formatPhone from '../../utils/formatPhone';
 import isEmailValid from '../../utils/isEmailValid';
@@ -133,9 +132,8 @@ export default function ContactForm({ buttonLabel, onSubmit }) {
       </FormGroup>
 
       <ButtonContainer>
-        <Button type="submit" disabled={!isFormValid || isSubmitting}>
-          {!isSubmitting && buttonLabel}
-          {isSubmitting && <Spinner size={16} />}
+        <Button type="submit" disabled={!isFormValid} isLoading={isSubmitting}>
+          {buttonLabel}
         </Button>
       </ButtonContainer>
     </Form>
