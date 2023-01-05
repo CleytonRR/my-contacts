@@ -22,7 +22,7 @@ export default class EventManager {
   }
 
   removeListener(event, listenerToRemove) {
-    const listeners = this.listeners[event];
+    const listeners = this.listeners.get(event);
 
     if (!listeners) {
       return;
@@ -30,17 +30,6 @@ export default class EventManager {
 
     const filteredListeners = listeners.filter((listener) => listener !== listenerToRemove);
 
-    this.listeners[event] = filteredListeners;
+    this.listeners.set(event, filteredListeners);
   }
 }
-
-const toastEventManager = new EventManager();
-
-toastEventManager.on('addtoast', (payload) => {
-  console.log('addToast 1', payload);
-});
-toastEventManager.on('addtoast', (payload) => {
-  console.log('addToast 2', payload);
-});
-
-toastEventManager.emit('addtoast', { type: 'danger' });
