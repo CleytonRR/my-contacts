@@ -16,4 +16,4 @@ app.use(routes);
 
 app.use(errorHandler);
 
-app.listen(process.env.SERVER_PORT, () => console.log(`Server running at ${process.env.SERVER_PORT}`));
+app.listen(process.env.SERVER_PORT, () => console.log(`Server running at ${process.env.SERVER_PORT} 🔥🚀`));
