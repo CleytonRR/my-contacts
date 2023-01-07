@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Overlay, Container, Footer } from './styles';
 
-import Button from '../Button/styles';
+import Button from '../Button';
 
 export default function Modal({ danger }) {
   return ReactDOM.createPortal(
