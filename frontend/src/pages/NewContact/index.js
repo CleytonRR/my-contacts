@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import PageHeader from '../../components/PageHeader';
 import ContactForm from '../../components/ContactForm';
 import ContactsService from '../../services/ContactsService';
@@ -5,6 +6,8 @@ import ContactsService from '../../services/ContactsService';
 import toast from '../../utils/toast';
 
 export default function NewContact() {
+  const contactFormRef = useRef(null);
+
   async function handleSubmit(formData) {
     try {
       const contact = {
@@ -20,6 +23,8 @@ export default function NewContact() {
         text: 'Contato cadastrado com sucesso!',
         duration: 3000,
       });
+
+      contactFormRef.current.resetFields();
     } catch {
       toast({
         type: 'danger',
@@ -31,7 +36,7 @@ export default function NewContact() {
   return (
     <>
       <PageHeader title="Novo contato" />
-      <ContactForm buttonLabel="Cadastrar" onSubmit={handleSubmit} />
+      <ContactForm ref={contactFormRef} buttonLabel="Cadastrar" onSubmit={handleSubmit} />
     </>
   );
 }
