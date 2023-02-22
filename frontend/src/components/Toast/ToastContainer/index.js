@@ -13,7 +13,7 @@ export default function ToastContainer() {
     pendingRemovalItemsId,
     handleAnimationEnd,
     handleRemoveMessage,
-  } = useAnimatedList([{ id: 123, type: 'success', text: 'hEllo' }]);
+  } = useAnimatedList();
 
   useEffect(() => {
     function handleAddToast({ type, text, duration }) {
