@@ -18,9 +18,12 @@ export default function useAnimatedList(initialValue = []) {
     );
   }, []);
 
+  const renderList = useCallback((renderItem) => items.map(renderItem), [items]);
+
   return {
     items,
     setItems,
+    renderList,
     pendingRemovalItemsId,
     handleAnimationEnd,
     handleRemoveMessage,
