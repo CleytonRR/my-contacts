@@ -45,9 +45,9 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  animation: ${messageIn} 0.3s;
+  animation: ${messageIn} 0.3s forwards;
 
-  ${({ isLeaving }) => isLeaving && css`animation: ${messageOut} 0.2s;`}
+  ${({ isLeaving }) => isLeaving && css`animation: ${messageOut} 0.2s forwards;`}
 
   ${({ type }) => containerVariants[type] || containerVariants.default}
 
