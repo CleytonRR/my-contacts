@@ -49,8 +49,6 @@ class HttpClient {
       });
     }
 
-    console.log(options.signal);
-
     const response = await fetch(`${this.baseURL}${path}`, {
       method: options.method,
       body: JSON.stringify(options.body),
