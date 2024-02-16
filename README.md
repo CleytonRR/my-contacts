@@ -4,24 +4,24 @@
 
 Contact Manager with React, Node.js, Express, and PostgreSQL
 
-### Description:
+### Description: 📰
 This project demonstrates a complete contact management application developed with the following technologies:
 
-### Frontend:
+### Frontend: 🧑‍💻
     React: A JavaScript library for building interactive and efficient user interfaces.
     
-### Backend:
+### Backend: 🧑‍💻
     Node.js: A JavaScript platform for developing scalable and high-performance applications.
     Express: A web framework for Node.js that facilitates the creation of RESTful APIs.
     PostgreSQL: A robust and reliable open-source relational database.
     
-### Features:
+### Features: ☕
     Create, edit, and delete contacts.
     Customizable categories to organize contacts.
     Search and filter contacts.
     Intuitive and responsive user interface.
 
-### Running Project
+### Running Project 🚀
 First, clone this project
 ```
 git clone git@github.com:CleytonRR/my-contacts.git
@@ -49,13 +49,13 @@ yarn start
 ```
 Done 🚀 project is running at localhost:3000/
 
-### Skills Developed:
+### Skills Developed: 🧑‍💻
     Full-stack development with React, Node.js, Express, and PostgreSQL.
     Implementation of design patterns in the frontend and backend.
     Use of good development practices, such as unit testing and continuous integration.
     Creation of intuitive and responsive user interfaces.
 
-### Technologies Used:
+### Technologies Used: 🧑‍💻
     React
     Node.js
     Express
